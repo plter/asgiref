@@ -111,7 +111,7 @@ class WsgiToAsgiInstance:
         status_code = int(status_code)
         # Extract headers
         headers = [
-            (name.lower().encode("ascii"), value.encode("ascii"))
+            (name.lower().encode("ascii"), value.encode("utf-8"))
             for name, value in response_headers
         ]
         # Build and send response start message.
